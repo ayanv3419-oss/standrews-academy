@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Portal | St. Andrews Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-lowest": "#0b0f10",
+                "on-error-container": "#ffdad6",
+                "surface": "#101415",
+                "tertiary-container": "#0c1829",
+                "on-secondary-fixed-variant": "#574500",
+                "surface-bright": "#363a3b",
+                "surface-container-low": "#191c1e",
+                "on-surface": "#e0e3e5",
+                "outline-variant": "#45464d",
+                "surface-variant": "#323537",
+                "on-tertiary-container": "#768197",
+                "primary-fixed-dim": "#bec6e0",
+                "on-surface-variant": "#c6c6cd",
+                "on-secondary-container": "#342800",
+                "tertiary-fixed-dim": "#bcc7de",
+                "surface-dim": "#101415",
+                "primary-fixed": "#dae2fd",
+                "on-primary-container": "#798098",
+                "secondary-container": "#af8d11",
+                "on-primary-fixed-variant": "#3f465c",
+                "tertiary": "#bcc7de",
+                "surface-container": "#1d2022",
+                "secondary": "#e9c349",
+                "on-tertiary-fixed": "#111c2d",
+                "surface-container-highest": "#323537",
+                "inverse-on-surface": "#2d3133",
+                "on-error": "#690005",
+                "on-secondary-fixed": "#241a00",
+                "on-tertiary-fixed-variant": "#3c475a",
+                "on-primary": "#283044",
+                "background": "#101415",
+                "inverse-primary": "#565e74",
+                "surface-tint": "#bec6e0",
+                "outline": "#909097",
+                "primary": "#bec6e0",
+                "on-tertiary": "#263143",
+                "secondary-fixed": "#ffe088",
+                "secondary-fixed-dim": "#e9c349",
+                "on-secondary": "#3c2f00",
+                "primary-container": "#0f172a",
+                "on-background": "#e0e3e5",
+                "inverse-surface": "#e0e3e5",
+                "on-primary-fixed": "#131b2e",
+                "error": "#ffb4ab",
+                "tertiary-fixed": "#d8e3fb",
+                "error-container": "#93000a",
+                "surface-container-high": "#272a2c"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "container-max": "1280px",
+                "section-padding-desktop": "120px",
+                "gutter": "32px",
+                "unit": "8px",
+                "section-padding-mobile": "64px"
+        },
+        "fontFamily": {
+                "body-lg": [
+                        "DM Sans"
+                ],
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "label-caps": [
+                        "DM Sans"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "headline-sm": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "DM Sans"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ]
+        },
+        "fontSize": {
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #323537;
+            border-radius: 10px;
+        }
+        .chart-container {
+            position: relative;
+            height: 250px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-hidden h-screen flex">
+<!-- SideNavBar Integration -->
+<aside class="fixed left-0 top-0 h-full flex flex-col py-6 border-r border-outline-variant bg-surface-container w-72 z-40 transition-all duration-300" id="sidebar">
+<div class="px-6 mb-8">
+<h1 class="font-headline-sm text-headline-sm font-bold text-secondary">Admin Portal</h1>
+<p class="text-label-caps mt-2 text-on-surface-variant">Academic Session 2023-24</p>
+</div>
+<nav class="flex-1 space-y-1 px-4">
+<!-- Active State Dashboard -->
+<a class="group flex items-center px-4 py-3 text-body-md font-body-md text-secondary border-l-4 border-secondary bg-surface-container-highest translate-x-1 transition-transform duration-200" href="dashboard.html">
+<span class="material-symbols-outlined mr-4" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="group flex items-center px-4 py-3 text-body-md font-body-md text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="group">group</span>
+                Students
+            </a>
+<a class="group flex items-center px-4 py-3 text-body-md font-body-md text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="event_available">event_available</span>
+                Attendance
+            </a>
+<a class="group flex items-center px-4 py-3 text-body-md font-body-md text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-all" href="results.html">
+<span class="material-symbols-outlined mr-4" data-icon="grade">grade</span>
+                Grades
+            </a>
+<a class="group flex items-center px-4 py-3 text-body-md font-body-md text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="payments">payments</span>
+                Fees
+            </a>
+<a class="group flex items-center px-4 py-3 text-body-md font-body-md text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-all" href="notices.html">
+<span class="material-symbols-outlined mr-4" data-icon="notifications">notifications</span>
+                Notices
+            </a>
+<a class="group flex items-center px-4 py-3 text-body-md font-body-md text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="settings">settings</span>
+                Settings
+            </a>
+</nav>
+<div class="px-4 mb-4">
+<button class="w-full py-3 px-4 bg-secondary text-on-secondary font-label-caps rounded flex items-center justify-center gap-2 hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-base" data-icon="add">add</span>
+                New Enrollment
+            </button>
+</div>
+<div class="px-4 pt-4 border-t border-outline-variant space-y-1">
+<a class="flex items-center px-4 py-2 text-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">
+<span class="material-symbols-outlined mr-4" data-icon="help">help</span>
+                Help Center
+            </a>
+<a class="flex items-center px-4 py-2 text-body-md text-on-surface-variant hover:text-error transition-colors" href="index.html">
+<span class="material-symbols-outlined mr-4" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="ml-72 flex-1 flex flex-col h-full bg-background overflow-y-auto">
+<!-- Header -->
+<header class="sticky top-0 bg-surface/90 backdrop-blur-sm flex justify-between items-center px-8 py-6 z-30 border-b border-outline-variant">
+<div>
+<h2 class="font-headline-md text-headline-md font-bold text-on-surface">Academic Overview</h2>
+<p class="text-body-md text-on-surface-variant mt-1">Welcome back, Administrator</p>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-secondary" data-icon="search">search</span>
+</div>
+<div class="flex items-center gap-4 pl-6 border-l border-outline-variant">
+<div class="text-right">
+<p class="text-body-md font-bold text-on-surface">Dr. Julian Thorne</p>
+<p class="text-label-caps mt-1 text-secondary">Principal</p>
+</div>
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-secondary">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a mature male educator with grey hair, wearing a sharp navy blue suit and a crisp white shirt. The background is a blurred, high-end library setting with warm wood tones. The image is captured with professional studio lighting, emphasizing a trustworthy and authoritative presence suitable for an academic administrator profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsl46KsgLq1iP4wSzGrBn1oF2SN3DPcvXrp370prF1eZ33f3TFi562ahefOaWBhpoYhkoEN9Q63UHeCJoQeK4s038N4ONqEvXPOsAMaETYdPA0Ls3lHPja3MUSz4fEzch7hVJViUBnpl2yihHfRgdrwm6u-z-uxB8FsL8sCKgXvg3w3z1UGR1i2BaT5rqM0MOT4ULWvsWa1DxoKRwQ3BnppVjz_KgeeYebsTDvykHHKZfWYkfRjp4CHEF0P1sf_Ek03WZAcHue-mUw"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Dashboard Content -->
+<div class="p-8 space-y-8 max-w-container-max mx-auto w-full">
+<!-- Summary Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Total Students Card -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant shadow-xl shadow-black/20 hover:border-secondary/50 transition-colors group">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 rounded bg-surface-container-highest text-secondary">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</div>
+<span class="text-secondary font-bold text-body-md">+4% this month</span>
+</div>
+<h3 class="text-label-caps text-on-surface-variant uppercase tracking-wider">Total Students</h3>
+<p class="text-display-lg font-display-lg text-secondary mt-2">1,284</p>
+<div class="mt-4 flex items-center text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] mr-2 text-secondary" data-icon="check_circle">check_circle</span>
+                        Active enrollments for 2024
+                    </div>
+</div>
+<!-- Average Attendance Card -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant shadow-xl shadow-black/20 hover:border-secondary/50 transition-colors group">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 rounded bg-surface-container-highest text-secondary">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+</div>
+<span class="text-error font-bold text-body-md">-2.1% week avg</span>
+</div>
+<h3 class="text-label-caps text-on-surface-variant uppercase tracking-wider">Average Attendance</h3>
+<p class="text-display-lg font-display-lg text-secondary mt-2">94.2%</p>
+<div class="mt-4 flex items-center text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] mr-2 text-error" data-icon="trending_down">trending_down</span>
+                        Slight drop in Senior Wing
+                    </div>
+</div>
+<!-- Unpaid Fees Card -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant shadow-xl shadow-black/20 hover:border-secondary/50 transition-colors group">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 rounded bg-surface-container-highest text-secondary">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<button class="text-secondary font-bold text-body-md hover:underline">Send Reminders</button>
+</div>
+<h3 class="text-label-caps text-on-surface-variant uppercase tracking-wider">Unpaid Fees</h3>
+<p class="text-display-lg font-display-lg text-secondary mt-2">$42,850</p>
+<div class="mt-4 flex items-center text-body-md text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] mr-2 text-secondary" data-icon="info">info</span>
+                        Due for Q3 Installment
+                    </div>
+</div>
+</section>
+<!-- Main Charts and Data -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Attendance Trend Chart -->
+<div class="lg:col-span-2 bg-surface-container-low p-8 rounded-xl border border-outline-variant shadow-xl shadow-black/20">
+<div class="flex justify-between items-center mb-8">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Attendance Trends</h3>
+<p class="text-body-md text-on-surface-variant mt-1">Monthly historical tracking for all grades</p>
+</div>
+<div class="flex gap-2">
+<select class="bg-surface-container-highest rounded border-outline-variant text-body-md text-on-surface focus:ring-secondary focus:border-secondary">
+<option>Academic Year 2023-24</option>
+<option>Academic Year 2022-23</option>
+</select>
+</div>
+</div>
+<div class="chart-container flex items-end justify-between gap-6 px-4 pb-4 border-b border-outline-variant">
+<!-- Simulated Chart Bars -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-surface-container-highest rounded-t transition-all duration-700 hover:bg-surface-variant" style="height: 85%"></div>
+<span class="text-body-md mt-4 text-on-surface-variant">Sept</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-surface-container-highest rounded-t transition-all duration-700 hover:bg-surface-variant" style="height: 92%"></div>
+<span class="text-body-md mt-4 text-on-surface-variant">Oct</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-surface-container-highest rounded-t transition-all duration-700 hover:bg-surface-variant" style="height: 88%"></div>
+<span class="text-body-md mt-4 text-on-surface-variant">Nov</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-surface-container-highest rounded-t transition-all duration-700 hover:bg-surface-variant" style="height: 75%"></div>
+<span class="text-body-md mt-4 text-on-surface-variant">Dec</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-secondary rounded-t transition-all duration-700 shadow-[0_0_15px_rgba(233,195,73,0.3)]" style="height: 94%"></div>
+<span class="text-body-md mt-4 font-bold text-secondary">Jan</span>
+</div>
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-surface-container-highest rounded-t transition-all duration-700 hover:bg-surface-variant" style="height: 82%"></div>
+<span class="text-body-md mt-4 text-on-surface-variant">Feb</span>
+</div>
+</div>
+</div>
+<!-- Recent Notices -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-outline-variant flex flex-col shadow-xl shadow-black/20">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Recent Notices</h3>
+<a class="text-secondary text-body-md hover:underline" href="notices.html">View All</a>
+</div>
+<div class="space-y-4 flex-1">
+<div class="p-5 rounded bg-surface-container-highest border border-outline-variant hover:border-secondary/30 transition-colors">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-secondary/20 text-secondary text-label-caps px-2 py-1 rounded uppercase">Important</span>
+<span class="text-body-md text-on-surface-variant">2h ago</span>
+</div>
+<h4 class="font-body-md text-on-surface font-bold">Final Term Examination Schedule</h4>
+<p class="text-body-md text-on-surface-variant line-clamp-2 mt-2">The revised dates for the final exams have been uploaded to the portal...</p>
+</div>
+<div class="p-5 rounded bg-surface-container-highest border border-outline-variant hover:border-secondary/30 transition-colors">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-primary-container text-primary text-label-caps px-2 py-1 rounded uppercase">Academic</span>
+<span class="text-body-md text-on-surface-variant">1d ago</span>
+</div>
+<h4 class="font-body-md text-on-surface font-bold">Parent-Teacher Meeting Q3</h4>
+<p class="text-body-md text-on-surface-variant line-clamp-2 mt-2">Scheduled for next Saturday from 9:00 AM in the Main Hall.</p>
+</div>
+<div class="p-5 rounded bg-surface-container-highest border border-outline-variant hover:border-secondary/30 transition-colors">
+<div class="flex justify-between items-start mb-2">
+<span class="bg-surface-variant text-on-surface text-label-caps px-2 py-1 rounded uppercase">Admin</span>
+<span class="text-body-md text-on-surface-variant">3d ago</span>
+</div>
+<h4 class="font-body-md text-on-surface font-bold">Campus Maintenance Notice</h4>
+<p class="text-body-md text-on-surface-variant line-clamp-2 mt-2">Wing B elevators will be undergoing maintenance this weekend.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Recent Students / Data Table -->
+<section class="bg-surface-container-low rounded-xl border border-outline-variant overflow-hidden shadow-xl shadow-black/20">
+<div class="px-8 py-6 border-b border-outline-variant flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Student Activity</h3>
+<p class="text-body-md text-on-surface-variant mt-1">Latest admissions and status updates</p>
+</div>
+<div class="flex gap-4">
+<div class="relative">
+<input class="pl-10 pr-4 py-2 bg-surface-container-highest border border-outline-variant rounded text-body-md focus:ring-secondary focus:border-secondary w-64" placeholder="Filter students..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-on-surface-variant text-[20px]" data-icon="search">search</span>
+</div>
+<button class="px-6 py-2 border border-outline-variant rounded text-body-md font-bold hover:bg-surface-container-highest transition-colors text-on-surface">
+                            Export PDF
+                        </button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="bg-surface-container-highest border-b border-outline-variant">
+<tr>
+<th class="px-8 py-4 text-label-caps text-on-surface-variant uppercase">Student Name</th>
+<th class="px-8 py-4 text-label-caps text-on-surface-variant uppercase">Grade</th>
+<th class="px-8 py-4 text-label-caps text-on-surface-variant uppercase">Enrollment ID</th>
+<th class="px-8 py-4 text-label-caps text-on-surface-variant uppercase">Status</th>
+<th class="px-8 py-4 text-label-caps text-on-surface-variant uppercase">Fee Status</th>
+<th class="px-8 py-4 text-label-caps text-on-surface-variant uppercase">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container-highest transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-primary-container text-primary flex items-center justify-center font-bold text-body-md">AW</div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Aria Watkins</p>
+<p class="text-label-caps text-on-surface-variant mt-1">aria.w@email.com</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-body-md text-on-surface">Grade 10-B</td>
+<td class="px-8 py-4 text-body-md text-on-surface font-mono">SA-2024-001</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded text-label-caps font-medium bg-green-900/30 text-green-400 border border-green-900/50">Active</span>
+</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded text-label-caps font-medium bg-secondary/20 text-secondary border border-secondary/30">Paid</span>
+</td>
+<td class="px-8 py-4">
+<button class="text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="bg-surface-container-highest/50 hover:bg-surface-container-highest transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-surface-variant text-on-surface flex items-center justify-center font-bold text-body-md">JM</div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Julian Martinez</p>
+<p class="text-label-caps text-on-surface-variant mt-1">j.martinez@email.com</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-body-md text-on-surface">Grade 12-A</td>
+<td class="px-8 py-4 text-body-md text-on-surface font-mono">SA-2024-045</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded text-label-caps font-medium bg-green-900/30 text-green-400 border border-green-900/50">Active</span>
+</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded text-label-caps font-medium bg-error/20 text-error border border-error/30">Pending</span>
+</td>
+<td class="px-8 py-4">
+<button class="text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-highest transition-colors">
+<td class="px-8 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded bg-tertiary-container text-tertiary flex items-center justify-center font-bold text-body-md">SL</div>
+<div>
+<p class="text-body-md font-bold text-on-surface">Sarah Lopez</p>
+<p class="text-label-caps text-on-surface-variant mt-1">s.lopez@email.com</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-4 text-body-md text-on-surface">Grade 8-C</td>
+<td class="px-8 py-4 text-body-md text-on-surface font-mono">SA-2024-112</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded text-label-caps font-medium bg-yellow-900/30 text-yellow-500 border border-yellow-900/50">On Leave</span>
+</td>
+<td class="px-8 py-4">
+<span class="inline-flex items-center px-2.5 py-1 rounded text-label-caps font-medium bg-secondary/20 text-secondary border border-secondary/30">Paid</span>
+</td>
+<td class="px-8 py-4">
+<button class="text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-4 border-t border-outline-variant flex items-center justify-between">
+<p class="text-body-md text-on-surface-variant">Showing 1-3 of 1,284 students</p>
+<div class="flex gap-2">
+<button class="p-2 rounded hover:bg-surface-container-highest transition-colors disabled:opacity-50 text-on-surface" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-2 rounded hover:bg-surface-container-highest transition-colors text-on-surface">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Footer -->
+<footer class="w-full py-8 px-8 border-t border-outline-variant bg-surface mt-auto">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant font-body-md">© 2024 St. Andrews Academy. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-body-md" href="index.html">Back to Website</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors text-body-md" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</main>
+<script>
+        // Simple Interaction logic for Hover States
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.opacity = '0.7';
+                el.style.transform = 'scale(0.98)';
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.opacity = '';
+                el.style.transform = '';
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.opacity = '';
+                el.style.transform = '';
+            });
+        });
+
+        // Search Bar Focus Effect
+        const searchInput = document.querySelector('input[type="text"]');
+        if (searchInput) {
+            searchInput.addEventListener('focus', () => {
+                searchInput.parentElement.classList.add('ring-1', 'ring-secondary');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchInput.parentElement.classList.remove('ring-1', 'ring-secondary');
+            });
+        }
+    </script>
+<script src="demo.js"></script>
+</body></html>

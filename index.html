@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>St. Andrews Academy | Excellence in Education</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Playfair+Display:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .glass-card {
+            background: rgba(16, 20, 21, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(16, 20, 21, 0.9) 0%, rgba(16, 20, 21, 0.4) 100%);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "surface-container-lowest": "#0b0f10",
+                "on-error-container": "#ffdad6",
+                "surface": "#101415",
+                "tertiary-container": "#0c1829",
+                "on-secondary-fixed-variant": "#574500",
+                "surface-bright": "#363a3b",
+                "surface-container-low": "#191c1e",
+                "on-surface": "#e0e3e5",
+                "outline-variant": "#45464d",
+                "surface-variant": "#323537",
+                "on-tertiary-container": "#768197",
+                "primary-fixed-dim": "#bec6e0",
+                "on-surface-variant": "#c6c6cd",
+                "on-secondary-container": "#342800",
+                "tertiary-fixed-dim": "#bcc7de",
+                "surface-dim": "#101415",
+                "primary-fixed": "#dae2fd",
+                "on-primary-container": "#798098",
+                "secondary-container": "#af8d11",
+                "on-primary-fixed-variant": "#3f465c",
+                "tertiary": "#bcc7de",
+                "surface-container": "#1d2022",
+                "secondary": "#e9c349",
+                "on-tertiary-fixed": "#111c2d",
+                "surface-container-highest": "#323537",
+                "inverse-on-surface": "#2d3133",
+                "on-error": "#690005",
+                "on-secondary-fixed": "#241a00",
+                "on-tertiary-fixed-variant": "#3c475a",
+                "on-primary": "#283044",
+                "background": "#101415",
+                "inverse-primary": "#565e74",
+                "surface-tint": "#bec6e0",
+                "outline": "#909097",
+                "primary": "#bec6e0",
+                "on-tertiary": "#263143",
+                "secondary-fixed": "#ffe088",
+                "secondary-fixed-dim": "#e9c349",
+                "on-secondary": "#3c2f00",
+                "primary-container": "#0f172a",
+                "on-background": "#e0e3e5",
+                "inverse-surface": "#e0e3e5",
+                "on-primary-fixed": "#131b2e",
+                "error": "#ffb4ab",
+                "tertiary-fixed": "#d8e3fb",
+                "error-container": "#93000a",
+                "surface-container-high": "#272a2c"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "container-max": "1280px",
+                "section-padding-desktop": "120px",
+                "gutter": "32px",
+                "unit": "8px",
+                "section-padding-mobile": "64px"
+        },
+        "fontFamily": {
+                "body-lg": [
+                        "DM Sans"
+                ],
+                "headline-md": [
+                        "Playfair Display"
+                ],
+                "label-caps": [
+                        "DM Sans"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "headline-sm": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "DM Sans"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ]
+        },
+        "fontSize": {
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "40px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "1.4",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg": [
+                        "64px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-gutter py-4 bg-surface/80 dark:bg-surface-container-lowest/80 backdrop-blur-xl border-b border-secondary/20 shadow-xl transition-all duration-300">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-secondary dark:text-secondary-fixed tracking-tight">St. Andrews Academy</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-label-caps text-label-caps text-secondary dark:text-secondary-fixed border-b border-secondary pb-1 transition-colors duration-300" href="#">Admissions</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 dark:text-on-surface-variant/70 hover:text-secondary transition-colors duration-300" href="#">Academics</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 dark:text-on-surface-variant/70 hover:text-secondary transition-colors duration-300" href="#">Heritage</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 dark:text-on-surface-variant/70 hover:text-secondary transition-colors duration-300" href="#">Faculty</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 dark:text-on-surface-variant/70 hover:text-secondary transition-colors duration-300" href="#">Campus</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 dark:text-on-surface-variant/70 hover:text-secondary transition-colors duration-300" href="notices.html">Notice Board</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 dark:text-on-surface-variant/70 hover:text-secondary transition-colors duration-300" href="dashboard.html">Admin</a>
+<a class="font-label-caps text-label-caps text-on-surface/70 dark:text-on-surface-variant/70 hover:text-secondary transition-colors duration-300" href="results.html">Results</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden md:block bg-secondary text-on-secondary px-6 py-2 rounded-full font-label-caps text-label-caps hover:bg-secondary-fixed transition-colors duration-300 shadow-md scale-95 hover:scale-100">Inquire</button>
+<button class="md:hidden text-secondary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative h-[90vh] min-h-[800px] w-full overflow-hidden flex items-center">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 hero-gradient z-10"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="Ultra-luxurious, cinematic exterior shot of a prestigious historic academy building with ivy-covered stone walls, manicured gardens, and golden hour lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQqSvvcQ5Dra4YfMC7sSvZZl5hF7OqDZHFHVK4jzZ9Zg11TQZ6NVJbu0MtUjmPo6Mp2MEs0-nOtL0OKdSB7ReG12CBS0YXKvjlahQGMSSPQHa49OUvgm7mWFsjI1CJ26DL0BjqF3vJBkxMIL_Rj266nRtd7Vt9AKJsd7Gqj0b6IvUlTZ3SS7ALWWt0aTdu8BNVCsejtsW6dG9ccXQ7q_nYAHuJJfInn6i88kS3eInUImwscvqD_gfru8IYcfFRjgZrQCrCPHVPeb7b')"></div>
+</div>
+<div class="relative z-20 max-w-container-max mx-auto px-gutter w-full mt-20">
+<div class="max-w-3xl text-on-primary">
+<span class="inline-block px-4 py-2 rounded-full border border-secondary text-secondary mb-8 font-label-caps text-label-caps uppercase tracking-widest">Est. 1924</span>
+<h1 class="font-display-lg text-display-lg mb-8 leading-tight text-white drop-shadow-lg">Inspiring Excellence, Nurturing Potential</h1>
+<p class="font-body-lg text-body-lg mb-10 opacity-90 max-w-2xl text-surface-variant drop-shadow-md">Providing a world-class education that empowers students to lead with integrity, innovate with purpose, and serve with compassion.</p>
+<div class="flex flex-wrap gap-6">
+<button class="bg-secondary text-on-secondary px-8 py-4 rounded-full font-label-caps text-label-caps tracking-widest shadow-xl hover:bg-secondary-fixed transition-all duration-300 hover:-translate-y-1">Apply for Admission</button>
+<button class="bg-surface/20 backdrop-blur-md text-white border border-secondary/50 px-8 py-4 rounded-full font-label-caps text-label-caps tracking-widest hover:bg-surface/40 hover:border-secondary transition-all duration-300">Explore Campus</button>
+</div>
+</div>
+</div>
+<!-- Bento Stats Grid Overlay -->
+<div class="absolute bottom-16 right-gutter z-20 hidden lg:grid grid-cols-2 gap-6 w-[400px]">
+<div class="glass-card p-8 rounded-xl border border-secondary/20 shadow-2xl">
+<div class="text-secondary font-display-lg text-headline-md mb-2">500+</div>
+<div class="text-on-surface-variant font-label-caps tracking-widest">Students</div>
+</div>
+<div class="glass-card p-8 rounded-xl border border-secondary/20 shadow-2xl">
+<div class="text-secondary font-display-lg text-headline-md mb-2">50+</div>
+<div class="text-on-surface-variant font-label-caps tracking-widest">Awards</div>
+</div>
+</div>
+</section>
+<!-- Achievements Counter (Mobile & Tablet visible) -->
+<section class="lg:hidden bg-surface-container-lowest py-16 px-gutter border-b border-secondary/10">
+<div class="grid grid-cols-2 gap-8 text-center">
+<div>
+<div class="font-display-lg-mobile text-display-lg-mobile text-secondary mb-2">500+</div>
+<p class="font-label-caps uppercase tracking-widest text-on-surface-variant">Students enrolled</p>
+</div>
+<div>
+<div class="font-display-lg-mobile text-display-lg-mobile text-secondary mb-2">50+</div>
+<p class="font-label-caps uppercase tracking-widest text-on-surface-variant">National Awards</p>
+</div>
+</div>
+</section>
+<!-- Principal's Message -->
+<section class="py-section-padding-desktop bg-surface px-gutter">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 gap-20 items-center">
+<div class="md:col-span-5 relative group">
+<div class="absolute -top-6 -left-6 w-32 h-32 bg-secondary rounded-full z-0 opacity-10 group-hover:scale-110 transition-transform duration-500"></div>
+<div class="relative z-10 rounded-xl overflow-hidden shadow-2xl border border-secondary/20">
+<img class="w-full aspect-[4/5] object-cover" data-alt="Professional portrait of a sophisticated female school principal in a high-end office with leather-bound books and a gold-trimmed desk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6_j88a6VvweMgVFy9nhGaTTVHFK3-VRETeRX4cA3OtNwvGzlYJVMi0M6GtnSc0Kw6UdNTzEK_5zrwmyzXeMmSrRP24AxUOM5jls0KRL3X5qPPXspTJOMx061llTVCkS4Dq_lF15O_IBISs3lP9X2FDhukM6NNz3Fll3EMqHrg7XfmNuQmaznQ2a5ByahFtPUPRjLugvTt9G5m0NtsdH957S3w0TAK4pzXPChJlEacq0pNrZZyurC4TfNRw0gyM-gwp2u8rKVN2JE_"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-40 h-40 bg-surface-bright rounded-xl z-0 opacity-50 border border-secondary/10"></div>
+</div>
+<div class="md:col-span-7">
+<span class="text-secondary font-bold font-label-caps uppercase tracking-widest mb-6 block">Leadership</span>
+<h2 class="font-display-lg text-headline-md md:text-display-lg text-on-surface mb-10">Principal's Message</h2>
+<div class="space-y-8 text-on-surface-variant font-body-lg">
+<p class="italic relative pl-10">
+<span class="material-symbols-outlined absolute left-0 top-0 text-secondary text-5xl opacity-30">format_quote</span>
+                            "At St. Andrews Academy, we believe that education is not merely the filling of a bucket, but the lighting of a fire. Our mission is to provide an environment where curiosity thrives and character is forged."
+                        </p>
+<p>Our curriculum is designed to challenge students intellectually while fostering a sense of social responsibility. We are proud of our heritage and excited about our future as we continue to mold the leaders of tomorrow.</p>
+<div class="pt-6 border-t border-secondary/20">
+<p class="font-headline-sm text-headline-sm text-on-surface mb-2">Dr. Elizabeth Montgomery</p>
+<p class="text-label-caps text-secondary tracking-widest">PhD in Educational Leadership, Oxford University</p>
+</div>
+<button class="text-secondary font-label-caps tracking-widest flex items-center gap-3 hover:gap-5 transition-all mt-8 group">
+                            Read Full Message <span class="material-symbols-outlined group-hover:text-secondary-fixed">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest News Carousel -->
+<section class="py-section-padding-desktop overflow-hidden bg-surface-container-lowest border-t border-secondary/10">
+<div class="max-w-container-max mx-auto px-gutter mb-16 flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+<div>
+<span class="text-secondary font-bold font-label-caps uppercase tracking-widest mb-6 block">Updates</span>
+<h2 class="font-display-lg text-headline-md md:text-display-lg text-on-surface">Latest News &amp; Events</h2>
+</div>
+<div class="flex gap-4">
+<button class="p-4 rounded-full border border-secondary/30 text-secondary hover:bg-secondary hover:text-on-secondary transition-all group">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-4 rounded-full border border-secondary/30 text-secondary hover:bg-secondary hover:text-on-secondary transition-all group">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-10 overflow-x-auto px-gutter pb-12 hide-scrollbar snap-x">
+<!-- News Card 1 -->
+<div class="min-w-[340px] md:min-w-[440px] snap-start bg-surface rounded-xl overflow-hidden shadow-lg border border-secondary/10 hover:shadow-2xl hover:border-secondary/30 transition-all duration-500 group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Modern science lab in an elite private school with students in smart uniforms using high-end equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkiJLcUwBfgdFzV3jI7rkRGW_NwPozn0QBsp-f6TPq0ch5agGpT-qYwfV_GNlkB8eBv0wgiYMJFXDVywLr68uo0olj4CJKJKhwveiEhmqyWgAIvLewl4In3M7m5Y8VLeDd_nz6SvZrLvdOZURFj-KTQ354-SHYys_NrakDVMhyxGQLxtIIzD1CBwJFqzXjPmgInH2D_jgPY5RCJYpk-3BNKZBn5tLXxvZNw8rpz0OWHyX6YeGPHX-NoObavmP4Hs7PQwAVV2IMk-E-"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-10 relative">
+<div class="flex gap-4 mb-6 items-center">
+<span class="border border-secondary text-secondary px-4 py-1.5 rounded-full text-label-caps font-label-caps tracking-widest">Science</span>
+<span class="text-on-surface-variant text-label-caps tracking-wider">Oct 24, 2023</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4 group-hover:text-secondary transition-colors">St. Andrews Wins State Science Olympiad</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-3">Our Grade 10 team secured the first position in the annual regional science competition held last weekend, demonstrating outstanding innovation.</p>
+</div>
+</div>
+<!-- News Card 2 -->
+<div class="min-w-[340px] md:min-w-[440px] snap-start bg-surface rounded-xl overflow-hidden shadow-lg border border-secondary/10 hover:shadow-2xl hover:border-secondary/30 transition-all duration-500 group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Grand theater stage in a prestigious school with students performing a classical play." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLB0ouGYSt3yrQBhWYvfDFgiRP9LpnPQr3m2W_H1UPf1bPMUnMICKEAk7SYhxWjsGOkcIrivrBZ6CV0PWqwNTR2xTadeBq91nMh8X2NZcDYcPsiDTVnqnTOPg97_wM_slTdTd_zdaZN4f4pdEjloT6yot6nRMTLyqi8OR_2HhwQjvZfGuvhqQ8jMF5UGkAQd5Lvx7lTLAaEoQh5Bw8cOk5RwEiwpkfC94NGpjz5pNmA3H4IDo0WgXofht8D6v0ThkKB8dHy7u0cL7u"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-10 relative">
+<div class="flex gap-4 mb-6 items-center">
+<span class="border border-secondary text-secondary px-4 py-1.5 rounded-full text-label-caps font-label-caps tracking-widest">Arts</span>
+<span class="text-on-surface-variant text-label-caps tracking-wider">Oct 18, 2023</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4 group-hover:text-secondary transition-colors">Annual Drama Production: 'Macbeth'</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-3">Tickets are now available for this year's highly anticipated theatrical masterpiece by our senior drama club in the grand auditorium.</p>
+</div>
+</div>
+<!-- News Card 3 -->
+<div class="min-w-[340px] md:min-w-[440px] snap-start bg-surface rounded-xl overflow-hidden shadow-lg border border-secondary/10 hover:shadow-2xl hover:border-secondary/30 transition-all duration-500 group">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Elegant alumni gala event in a grand hall with marble columns and golden chandeliers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTPvGORqcP-T1zBFO26sjjTxPeFY2oZIoFUDLGsFK0saNozHQ8ODipMS4nGSxvVTW742vAYh6dHYmQmgU_HjkRXt68AcRryIRXZoZS5QAW-5K-fYrAdN5VgASpSPvd9wNkgZQL_Mm83M8XsYnbGiE-fsB4mIhrZBR7Y0_H0BIHeFStT8CC8Spgef1dZUegVOJO566Xm2U20wHc-UbJ2p4KJRY4ZwttjDKTgsX6E1twgfAI9qkX0rbxLGtcymrjx1F6EXfzgyg6ol3f"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+<div class="p-10 relative">
+<div class="flex gap-4 mb-6 items-center">
+<span class="border border-secondary text-secondary px-4 py-1.5 rounded-full text-label-caps font-label-caps tracking-widest">Alumni</span>
+<span class="text-on-surface-variant text-label-caps tracking-wider">Oct 12, 2023</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-4 group-hover:text-secondary transition-colors">Class of 2023 Alumni Gala</h3>
+<p class="text-on-surface-variant font-body-md line-clamp-3">Welcoming back our distinguished graduates for an evening of elegance, reminiscence, and networking in the grand hall.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-padding-desktop px-gutter bg-surface-container-low border-t border-b border-secondary/20 relative overflow-hidden">
+<div class="absolute inset-0 bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQqSvvcQ5Dra4YfMC7sSvZZl5hF7OqDZHFHVK4jzZ9Zg11TQZ6NVJbu0MtUjmPo6Mp2MEs0-nOtL0OKdSB7ReG12CBS0YXKvjlahQGMSSPQHa49OUvgm7mWFsjI1CJ26DL0BjqF3vJBkxMIL_Rj266nRtd7Vt9AKJsd7Gqj0b6IvUlTZ3SS7ALWWt0aTdu8BNVCsejtsW6dG9ccXQ7q_nYAHuJJfInn6i88kS3eInUImwscvqD_gfru8IYcfFRjgZrQCrCPHVPeb7b')] bg-cover bg-center opacity-5"></div>
+<div class="max-w-container-max mx-auto text-center relative z-10">
+<h2 class="font-display-lg text-headline-md md:text-display-lg mb-8 text-on-surface">Ready to Join Our Community?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-14 max-w-2xl mx-auto">Admission for the Academic Year 2024-25 is now open. Secure your child's future at St. Andrews Academy.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-8">
+<button class="bg-secondary text-on-secondary px-12 py-5 rounded-full font-label-caps text-label-caps tracking-widest shadow-xl hover:bg-secondary-fixed transition-all duration-300 hover:-translate-y-1">Download Prospectus</button>
+<button class="border border-secondary text-secondary px-12 py-5 rounded-full font-label-caps text-label-caps tracking-widest hover:bg-secondary/10 transition-all duration-300">Schedule a Tour</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full px-gutter py-section-padding-desktop flex flex-col md:flex-row justify-between items-start md:items-center gap-12 bg-surface-container-lowest text-on-surface border-t border-secondary/10">
+<div class="max-w-xs">
+<span class="font-headline-md text-headline-md text-secondary block mb-6">St. Andrews Academy</span>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 opacity-80">Forging future leaders through academic rigor, artistic expression, and moral excellence since 1924.</p>
+</div>
+<div class="flex flex-wrap gap-x-16 gap-y-8 flex-grow justify-end">
+<div>
+<h4 class="font-label-caps text-label-caps text-secondary tracking-widest mb-6">Links</h4>
+<ul class="space-y-4">
+<li><a class="text-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Terms of Excellence</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Alumni Portal</a></li>
+<li><a class="text-body-md text-on-surface-variant hover:text-secondary-fixed transition-colors opacity-80 hover:opacity-100" href="#">Contact Us</a></li>
+</ul>
+</div>
+<div class="w-full md:w-auto mt-8 md:mt-0 pt-8 md:pt-0 border-t border-secondary/10 md:border-t-0 flex flex-col justify-end text-left md:text-right">
+<p class="font-body-md text-body-md text-on-surface-variant opacity-80">© 2024 St. Andrews Academy. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<!-- WhatsApp Floating Button -->
+<a class="fixed bottom-8 right-8 z-[100] bg-[#25D366] text-white p-4 rounded-full shadow-2xl animate-float hover:scale-110 active:scale-95 transition-all group flex items-center gap-2 border border-white/20" href="https://wa.me/yournumber" target="_blank">
+<span class="hidden group-hover:block font-label-caps tracking-widest px-2">Inquire</span>
+<svg class="w-7 h-7" fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path>
+</svg>
+</a>
+<script>
+        // Simple carousel interaction
+        const carousel = document.querySelector('.hide-scrollbar');
+        const nextBtn = document.querySelectorAll('button span')[document.querySelectorAll('button span').length - 2];
+        const prevBtn = document.querySelectorAll('button span')[document.querySelectorAll('button span').length - 1];
+
+        // This is a placeholder for the carousel logic since button detection above is brittle.
+        // In a real production app, we would use IDs or more specific classes.
+    </script>
+<script src="demo.js"></script>
+</body></html>
