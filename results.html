@@ -3,7 +3,7 @@
 <html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Student Result Portal | St. Andrews Academy</title>
+<title>Student Result Portal | SPEC</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Playfair+Display:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -172,7 +172,10 @@
 <body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
 <!-- TopNavBar -->
 <header class="sticky top-0 w-full z-50 flex justify-between items-center px-4 md:px-10 py-4 max-w-container-max mx-auto bg-surface-container-lowest border-b border-outline-variant shadow-sm no-print transition-all duration-300">
-<a href="index.html"><div class="font-headline-md text-headline-md font-bold text-primary hover:opacity-80 transition-opacity cursor-pointer">St. Andrews Academy</div></a>
+<a href="index.html"><div class="leading-tight">
+<div class="font-headline-md text-headline-md font-bold text-primary hover:opacity-80 transition-opacity cursor-pointer">SPEC</div>
+<div class="text-[10px] tracking-wider uppercase whitespace-nowrap text-on-surface-variant/70">Sardar Patel Education Campus</div>
+</div></a>
 <nav class="hidden md:flex items-center gap-8">
 <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200 uppercase" href="index.html">Home</a>
 <a class="font-label-caps text-label-caps text-on-surface-variant hover:text-secondary transition-colors duration-200 uppercase" href="#">About</a>
@@ -188,34 +191,35 @@
 <img alt="Modern science lab" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkiJLcUwBfgdFzV3jI7rkRGW_NwPozn0QBsp-f6TPq0ch5agGpT-qYwfV_GNlkB8eBv0wgiYMJFXDVywLr68uo0olj4CJKJKhwveiEhmqyWgAIvLewl4In3M7m5Y8VLeDd_nz6SvZrLvdOZURFj-KTQ354-SHYys_NrakDVMhyxGQLxtIIzD1CBwJFqzXjPmgInH2D_jgPY5RCJYpk-3BNKZBn5tLXxvZNw8rpz0OWHyX6YeGPHX-NoObavmP4Hs7PQwAVV2IMk-E-"/>
 <div class="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent pointer-events-none"></div>
 <div class="absolute bottom-8 left-8 right-8 pointer-events-none">
-<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-2">Excellence in Science</h2>
-<p class="font-body-lg text-on-surface-variant max-w-2xl">Fostering innovation, academic rigor, and real-world skills in our state-of-the-art facilities.</p>
+<h2 class="font-display-lg-mobile md:font-display-lg text-primary mb-2">Excellence in Research &amp; Innovation</h2>
+<p class="font-body-lg text-on-surface-variant max-w-2xl">700+ research publications and 20+ patents across our 7 institutes — fostering innovation, academic rigor, and real-world skills.</p>
 </div>
 </section>
 <!-- Search Section -->
 <section class="w-full max-w-2xl mb-12 no-print">
 <div class="text-center mb-8">
 <h1 class="font-display-lg text-display-lg text-primary mb-2">Examination Results</h1>
-<p class="text-on-surface-variant font-body-lg">Academic Session 2023-2024</p>
+<p class="text-on-surface-variant font-body-lg">Academic Session 2026-27</p>
 </div>
 <div class="bg-surface-container-lowest border border-outline-variant rounded-xl p-8 shadow-sm hover:shadow-md transition-shadow duration-300">
 <form class="grid grid-cols-1 md:grid-cols-2 gap-6" onsubmit="return false;">
 <div class="flex flex-col gap-2">
-<label class="font-label-caps text-primary uppercase" for="roll-number">Roll Number</label>
+<label class="font-label-caps text-primary uppercase" for="roll-number">Enrollment Number</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-secondary transition-colors duration-200">badge</span>
-<input class="w-full pl-10 pr-4 py-3 bg-surface border border-outline-variant rounded-lg focus:border-secondary focus:ring-2 focus:ring-secondary/20 text-on-surface outline-none transition-all duration-200 font-body-md hover:border-outline" id="roll-number" placeholder="Enter Roll No." type="text"/>
+<input class="w-full pl-10 pr-4 py-3 bg-surface border border-outline-variant rounded-lg focus:border-secondary focus:ring-2 focus:ring-secondary/20 text-on-surface outline-none transition-all duration-200 font-body-md hover:border-outline" id="roll-number" placeholder="Enter Enrollment No." type="text"/>
 </div>
 </div>
 <div class="flex flex-col gap-2">
-<label class="font-label-caps text-primary uppercase" for="std">Standard (Std)</label>
+<label class="font-label-caps text-primary uppercase" for="std">Programme</label>
 <div class="relative group">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-secondary transition-colors duration-200">school</span>
 <select class="w-full pl-10 pr-4 py-3 bg-surface border border-outline-variant rounded-lg focus:border-secondary focus:ring-2 focus:ring-secondary/20 text-on-surface outline-none transition-all duration-200 font-body-md appearance-none hover:border-outline cursor-pointer" id="std">
-<option disabled="" selected="" value="">Select Grade</option>
-<option>Std 10</option>
-<option>Std 11</option>
-<option>Std 12</option>
+<option disabled="" selected="" value="">Select Programme</option>
+<option>B.E. / B.Tech</option>
+<option>B.Pharm</option>
+<option>MBA / BBA / BCA</option>
+<option>B.Com / B.Sc / B.Ed</option>
 </select>
 </div>
 </div>
@@ -233,7 +237,7 @@
 <div class="bg-surface-container p-6 md:p-8 text-on-surface flex flex-col md:flex-row justify-between items-start md:items-center gap-4 border-b border-outline-variant">
 <div>
 <h2 class="font-headline-md text-headline-md text-primary">Statement of Marks</h2>
-<p class="text-on-surface-variant font-body-md">Annual Examination 2024</p>
+<p class="text-on-surface-variant font-body-md">Winter Examination 2026</p>
 </div>
 <div class="bg-secondary text-on-secondary px-4 py-1 rounded-full font-label-caps uppercase tracking-wider shadow-sm">Official</div>
 </div>
@@ -241,21 +245,21 @@
 <div class="p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
 <div class="flex items-center gap-4 col-span-1 md:col-span-2">
 <div class="w-20 h-20 rounded-full bg-surface-container-high flex items-center justify-center overflow-hidden border-2 border-secondary shadow-md hover:scale-105 transition-transform duration-300 cursor-pointer">
-<img class="w-full h-full object-cover" data-alt="A professional high-resolution studio portrait of a young male student wearing a neat navy blue school blazer and a white shirt. The lighting is soft and academic, set against a clean, minimal light gray background. The composition is focused on the upper chest and head, conveying a sense of achievement and pride in a modern academic context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN850zWQ8Yn_fX5ztMEuG2R4E4XwgstcZGHqMi7oiplv88B97105_qBA9WajBHU-D5BPnyqthBMy7hzj11e5vGBTj0fn6NLRiagEDQFg_684uqLaRZzkJuLj36QjG7QfiLzN4cQv_hXLXlhC_1NJxrelgFa3quiO0_9nWNKNKtop136YauHyt4isIoxHWR0bfb9jlgk6Q-OgbwjICISyREnbRoMyNn-jC00_iR5zDa6eYO6s3SpyFcJiCiMX3j_Ff19_uS-1UnLlT0"/>
+<img class="w-full h-full object-cover" data-alt="A professional high-resolution studio portrait of a young male engineering student wearing a neat navy blue blazer and a white shirt. The lighting is soft and academic, set against a clean, minimal light gray background. The composition is focused on the upper chest and head, conveying a sense of achievement and pride in a modern academic context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN850zWQ8Yn_fX5ztMEuG2R4E4XwgstcZGHqMi7oiplv88B97105_qBA9WajBHU-D5BPnyqthBMy7hzj11e5vGBTj0fn6NLRiagEDQFg_684uqLaRZzkJuLj36QjG7QfiLzN4cQv_hXLXlhC_1NJxrelgFa3quiO0_9nWNKNKtop136YauHyt4isIoxHWR0bfb9jlgk6Q-OgbwjICISyREnbRoMyNn-jC00_iR5zDa6eYO6s3SpyFcJiCiMX3j_Ff19_uS-1UnLlT0"/>
 </div>
 <div>
-<h3 class="font-headline-sm text-primary hover:text-primary-fixed transition-colors cursor-pointer">John Doe</h3>
-<p class="text-on-surface-variant font-label-caps mt-1">Roll No: SA-2023-0842</p>
-<p class="text-on-surface-variant font-label-caps">Std: 12 (Science Stream)</p>
+<h3 class="font-headline-sm text-primary hover:text-primary-fixed transition-colors cursor-pointer">Raj Patel</h3>
+<p class="text-on-surface-variant font-label-caps mt-1">Enrollment No: SPEC-2024-0842</p>
+<p class="text-on-surface-variant font-label-caps">B.E. Computer Engineering - Semester 5</p>
 </div>
 </div>
 <div class="flex flex-col items-end justify-center group cursor-default">
 <div class="text-right">
-<span class="block text-secondary font-display-lg text-4xl leading-none mb-1 group-hover:scale-105 transition-transform duration-200 transform origin-right">92%</span>
-<span class="font-label-caps text-outline uppercase group-hover:text-on-surface-variant transition-colors duration-200">Aggregate Score</span>
+<span class="block text-secondary font-display-lg text-4xl leading-none mb-1 group-hover:scale-105 transition-transform duration-200 transform origin-right">SPI 9.2</span>
+<span class="font-label-caps text-outline uppercase group-hover:text-on-surface-variant transition-colors duration-200">Semester Performance Index</span>
 </div>
 <div class="mt-2 text-right">
-<span class="inline-block bg-primary-container text-on-primary-container px-3 py-1 rounded-lg font-headline-sm hover:bg-primary-container/80 transition-colors duration-200">Grade A</span>
+<span class="inline-block bg-primary-container text-on-primary-container px-3 py-1 rounded-lg font-headline-sm hover:bg-primary-container/80 transition-colors duration-200">Grade AA</span>
 </div>
 </div>
 </div>
@@ -273,33 +277,33 @@
 </thead>
 <tbody class="font-body-md text-on-surface">
 <tr class="border-b border-outline-variant hover:bg-surface-variant transition-colors duration-200 cursor-default">
-<td class="py-4 px-4 font-medium">Advanced Mathematics</td>
-<td class="py-4 px-4 text-on-surface-variant">100</td>
-<td class="py-4 px-4">95</td>
-<td class="py-4 px-4 text-right text-primary font-bold">P</td>
-</tr>
-<tr class="border-b border-outline-variant bg-surface-container/50 hover:bg-surface-variant transition-colors duration-200 cursor-default">
-<td class="py-4 px-4 font-medium">Physics</td>
+<td class="py-4 px-4 font-medium">Engineering Mathematics-III</td>
 <td class="py-4 px-4 text-on-surface-variant">100</td>
 <td class="py-4 px-4">88</td>
 <td class="py-4 px-4 text-right text-primary font-bold">P</td>
 </tr>
+<tr class="border-b border-outline-variant bg-surface-container/50 hover:bg-surface-variant transition-colors duration-200 cursor-default">
+<td class="py-4 px-4 font-medium">Data Structures</td>
+<td class="py-4 px-4 text-on-surface-variant">100</td>
+<td class="py-4 px-4">95</td>
+<td class="py-4 px-4 text-right text-primary font-bold">P</td>
+</tr>
 <tr class="border-b border-outline-variant hover:bg-surface-variant transition-colors duration-200 cursor-default">
-<td class="py-4 px-4 font-medium">Chemistry</td>
+<td class="py-4 px-4 font-medium">Database Management Systems</td>
 <td class="py-4 px-4 text-on-surface-variant">100</td>
 <td class="py-4 px-4">91</td>
 <td class="py-4 px-4 text-right text-primary font-bold">P</td>
 </tr>
 <tr class="border-b border-outline-variant bg-surface-container/50 hover:bg-surface-variant transition-colors duration-200 cursor-default">
-<td class="py-4 px-4 font-medium">Computer Science</td>
+<td class="py-4 px-4 font-medium">Operating Systems</td>
 <td class="py-4 px-4 text-on-surface-variant">100</td>
-<td class="py-4 px-4">98</td>
+<td class="py-4 px-4">89</td>
 <td class="py-4 px-4 text-right text-primary font-bold">P</td>
 </tr>
 <tr class="border-b border-outline-variant hover:bg-surface-variant transition-colors duration-200 cursor-default">
-<td class="py-4 px-4 font-medium">English Literature</td>
+<td class="py-4 px-4 font-medium">Computer Networks</td>
 <td class="py-4 px-4 text-on-surface-variant">100</td>
-<td class="py-4 px-4">89</td>
+<td class="py-4 px-4">92</td>
 <td class="py-4 px-4 text-right text-primary font-bold">P</td>
 </tr>
 </tbody>
@@ -310,7 +314,7 @@
 <div class="p-6 md:p-8 bg-surface-container border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-6 no-print">
 <div class="flex items-center gap-2 text-on-surface-variant font-label-caps italic group cursor-default">
 <span class="material-symbols-outlined text-sm group-hover:text-primary transition-colors duration-200">verified_user</span>
-                        Digitally verified by St. Andrews Examination Board
+                        Digitally verified by SPEC Examination Cell
                     </div>
 <div class="flex items-center gap-4 w-full md:w-auto">
 <button class="flex-1 md:flex-none flex items-center justify-center gap-2 border border-secondary text-secondary px-6 py-2 rounded-lg font-label-caps hover:bg-secondary/10 hover:shadow-sm hover:-translate-y-0.5 active:translate-y-0 active:bg-secondary/20 transition-all duration-200 uppercase tracking-wider group" onclick="window.print()">
@@ -328,15 +332,15 @@
 <div class="hidden print-only mt-12 w-full">
 <div class="flex justify-between items-end border-t border-dashed border-primary pt-8">
 <div class="text-center">
-<div class="w-32 h-12 mb-2 mx-auto italic font-headline-sm text-primary">Principal</div>
-<p class="font-label-caps">Head of Academy</p>
+<div class="w-32 h-12 mb-2 mx-auto italic font-headline-sm text-primary">Registrar</div>
+<p class="font-label-caps">SPEC Examination Cell</p>
 </div>
 <div class="text-center">
-<img class="w-24 h-24 opacity-30" data-alt="A formal academic seal of St. Andrews Academy. The logo is circular, featuring a crest with a book and a torch in deep navy blue and gold colors. The text 'St. Andrews Academy - Est. 1954' is embossed in a circular path around the crest. The overall style is official, corporate, and evokes traditional institutional values with a modern, clean execution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOXrDdTzpypYEq_276f8aQrFlQaNbWmm7nY7RtWMEiDC19_B5B0MpE4SAUQPXFJvto3zqzT8YkQVmqOK44iVUSfso3SCSZ3k1wBfL0P0s7WAvv-X0lzc_C_u6U_i9Ox4wBnrXYiMNjH4AALxH36GJ6yXxPjDtVmbUC06j3aeD-MtHrEPPWIOF081UHhX450R4goV1Ka60SjOObm0U5eiYLbApOZBNqLy7qNeyjJLLun4lZ_TmiYdTX8AnnVZQlSxT-IfC1sPVqaJh3"/>
+<img class="w-24 h-24 opacity-30" data-alt="A formal academic seal of Sardar Patel Education Campus. The logo is circular, featuring a crest with a book and a torch in deep navy blue and gold colors. The text 'SPEC - Sardar Patel Education Campus' is embossed in a circular path around the crest. The overall style is official, corporate, and evokes traditional institutional values with a modern, clean execution." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOXrDdTzpypYEq_276f8aQrFlQaNbWmm7nY7RtWMEiDC19_B5B0MpE4SAUQPXFJvto3zqzT8YkQVmqOK44iVUSfso3SCSZ3k1wBfL0P0s7WAvv-X0lzc_C_u6U_i9Ox4wBnrXYiMNjH4AALxH36GJ6yXxPjDtVmbUC06j3aeD-MtHrEPPWIOF081UHhX450R4goV1Ka60SjOObm0U5eiYLbApOZBNqLy7qNeyjJLLun4lZ_TmiYdTX8AnnVZQlSxT-IfC1sPVqaJh3"/>
 <p class="font-label-caps mt-2">Institutional Seal</p>
 </div>
 <div class="text-center">
-<p class="font-label-caps mb-2">April 15, 2024</p>
+<p class="font-label-caps mb-2">January 15, 2027</p>
 <p class="font-label-caps">Date of Issue</p>
 </div>
 </div>
@@ -358,7 +362,7 @@
 <div class="p-6 rounded-xl bg-surface-container-low border border-outline-variant flex flex-col items-center text-center hover:bg-surface-container hover:shadow-md hover:-translate-y-1 transition-all duration-300 group cursor-default">
 <span class="material-symbols-outlined text-secondary text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">support_agent</span>
 <h4 class="font-headline-sm text-primary mb-2">Portal Help</h4>
-<p class="text-on-surface-variant font-body-md">Facing issues? Contact the academic office at help@standrews.edu.</p>
+<p class="text-on-surface-variant font-body-md">Facing issues? Contact the campus office at spec_campus@spec.edu.in.</p>
 </div>
 </div>
 </section>
@@ -366,15 +370,15 @@
 <!-- Footer -->
 <footer class="w-full py-12 px-4 md:px-10 grid grid-cols-1 md:grid-cols-4 gap-8 bg-surface-container-lowest text-on-surface border-t border-outline-variant no-print">
 <div class="md:col-span-1">
-<div class="font-headline-md text-headline-md text-primary font-bold mb-4 hover:text-primary-fixed transition-colors duration-200 cursor-pointer">St. Andrews</div>
-<p class="font-body-md text-on-surface-variant">Excellence in education since 1954. Nurturing minds, building futures.</p>
+<div class="font-headline-md text-headline-md text-primary font-bold mb-4 hover:text-primary-fixed transition-colors duration-200 cursor-pointer">Sardar Patel Education Campus</div>
+<p class="font-body-md text-on-surface-variant">Excellence in education since 2007. Nurturing minds, building futures.</p>
 </div>
 <div>
 <h5 class="font-label-caps font-bold text-secondary mb-4 uppercase">Portal Links</h5>
 <ul class="space-y-2">
-<li><a class="font-body-md text-on-surface-variant hover:text-secondary hover:pl-1 transition-all duration-200 inline-block" href="results.html">Student Login</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary hover:pl-1 transition-all duration-200 inline-block" href="https://specstudent.in" target="_blank">Student Portal</a></li>
+<li><a class="font-body-md text-on-surface-variant hover:text-secondary hover:pl-1 transition-all duration-200 inline-block" href="http://specalumni.org.in" target="_blank">Alumni Network</a></li>
 <li><a class="font-body-md text-on-surface-variant hover:text-secondary hover:pl-1 transition-all duration-200 inline-block" href="#">Faculty Portal</a></li>
-<li><a class="font-body-md text-on-surface-variant hover:text-secondary hover:pl-1 transition-all duration-200 inline-block" href="#">Library Catalog</a></li>
 <li><a class="font-body-md text-on-surface-variant hover:text-secondary hover:pl-1 transition-all duration-200 inline-block" href="#">E-Learning</a></li>
 </ul>
 </div>
@@ -389,14 +393,14 @@
 </div>
 <div>
 <h5 class="font-label-caps font-bold text-secondary mb-4 uppercase">Newsletter</h5>
-<p class="font-body-md text-on-surface-variant mb-4">Stay updated with academy events.</p>
+<p class="font-body-md text-on-surface-variant mb-4">Stay updated with campus events.</p>
 <div class="flex h-10 group">
 <input class="flex-grow rounded-l bg-surface border border-outline-variant focus:border-secondary focus:ring-1 focus:ring-secondary text-on-surface px-3 font-body-md outline-none transition-all duration-200 hover:border-outline" placeholder="Email" type="email"/>
 <button class="bg-secondary px-4 rounded-r text-on-secondary font-label-caps uppercase tracking-wider hover:bg-secondary-fixed active:bg-secondary-fixed-dim transition-colors duration-200">Join</button>
 </div>
 </div>
 <div class="md:col-span-4 border-t border-outline-variant pt-8 text-center font-body-md text-on-surface-variant">
-            © 2024 St. Andrews Academy. All rights reserved.
+            © 2026 SPEC. All rights reserved.
         </div>
 </footer>
 <script src="demo.js"></script>

@@ -1,4 +1,4 @@
-/* St. Andrews Academy — demo interactivity layer.
+/* SPEC (Sardar Patel Education Campus) — demo interactivity layer.
    Makes every not-yet-built button/link show a styled "Coming soon" toast,
    so the demo never has a dead-end click. Real navigation links (index.html,
    notices.html, dashboard.html, etc.) are left untouched and navigate normally. */

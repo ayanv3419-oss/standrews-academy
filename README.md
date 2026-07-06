@@ -1,7 +1,12 @@
-# St. Andrews Academy — Demo Website
+# SPEC — Sardar Patel Education Campus (Demo Website)
 
-A modern, luxury-styled **school website demo** (frontend-only, fake data, no backend).
-Dark + gold theme, built with Tailwind (CDN), Playfair Display + DM Sans, and Material Symbols.
+A modern, luxury-styled **campus website demo** built for Sardar Patel Education Campus,
+Bakrol, Anand (Gujarat) — managed by Tirupati Foundation Trust, est. 2007.
+Frontend-only, demo data, no backend. Dark + gold theme, built with Tailwind (CDN),
+Playfair Display + DM Sans, and Material Symbols.
+
+Real campus facts (name, address, contacts, institutes, stats, notices) are taken from
+[spec.edu.in](https://www.spec.edu.in); portal screens use sample data.
 
 ## Live demo
 Hosted on GitHub Pages → see the repository's **Pages** URL.
@@ -9,10 +14,10 @@ Hosted on GitHub Pages → see the repository's **Pages** URL.
 ## Pages
 | Page | File | What it is |
 |------|------|------------|
-| Home | `index.html` | Marketing homepage — hero, principal's message, news, CTA |
-| Parent Notice Board | `notices.html` | Parent portal — announcements, exam schedules, holiday list |
+| Home | `index.html` | Marketing homepage — hero, trustee's message, 7 institutes, news, CTA |
+| Student Corner | `notices.html` | Notice board — announcements, exam schedules, holiday list |
 | Admin Dashboard | `dashboard.html` | Admin console — KPIs, attendance, fees, student table |
-| Result Portal | `results.html` | Student result lookup + printable marksheet |
+| Result Portal | `results.html` | Student result lookup + printable GTU-style marksheet |
 
 All pages share one navigation and the gold/dark design system, and cross-link to each other.
 
